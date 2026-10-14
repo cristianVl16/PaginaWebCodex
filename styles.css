@@ -27,8 +27,9 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 .skip-link:focus { transform: translateY(0); }
 .section-wrap { width: min(calc(100% - 56px), var(--max)); margin-inline: auto; }
 .site-header { position: sticky; z-index: 40; top: 0; width: 100%; min-height: 82px; margin: 0 auto; padding-inline: max(28px, calc((100vw - 1400px) / 2)); display: flex; align-items: center; justify-content: space-between; gap: 28px; border-bottom: 1px solid var(--line); background: color-mix(in srgb, var(--bg) 90%, transparent); backdrop-filter: blur(16px); -webkit-backdrop-filter: blur(16px); }
-.brand { display: inline-flex; align-items: center; gap: 11px; min-width: max-content; }
+.brand { display: inline-flex; align-items: center; gap: 12px; min-width: max-content; }
 .brand-mark { display: grid; place-items: center; width: 34px; height: 34px; border: 1px solid var(--accent); color: var(--accent); font-family: var(--mono); font-size: 12px; letter-spacing: -.08em; }
+.brand-avatar { display: block; flex: 0 0 auto; width: 36px; height: 36px; border: 1px solid color-mix(in srgb, var(--accent) 75%, white); border-radius: 50%; object-fit: cover; object-position: center 15%; box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px color-mix(in srgb, var(--accent) 40%, transparent); }
 .brand-name { font-size: 13px; font-weight: 800; letter-spacing: -.035em; }
 .brand-dot { color: var(--accent); }
 .main-nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 42px); }
@@ -67,12 +68,13 @@ h1, h2, h3, p { margin-top: 0; }
 .hero-note { display: flex; align-items: center; gap: 9px; margin: 28px 0 0; color: var(--subtle); font-size: 10px; }
 .hero-note span { color: var(--accent); font-size: 16px; }
 .hero-visual { position: relative; min-height: 565px; display: grid; place-items: center; isolation: isolate; }
-.portrait-frame { position: relative; z-index: 1; width: min(100%, 450px); height: 565px; overflow: hidden; border: 1px solid var(--line); background: #080908; box-shadow: 0 30px 90px rgba(0, 0, 0, .23); }
-.portrait-frame::after { position: absolute; content: ''; inset: 0; pointer-events: none; background: linear-gradient(180deg, rgba(9, 12, 9, .04) 45%, rgba(9, 12, 9, .86) 100%); }
-.portrait-frame img { display: block; width: 100%; height: 100%; object-fit: contain; object-position: center; }
-.portrait-topline { position: absolute; z-index: 2; inset: 17px 19px auto; display: flex; justify-content: space-between; color: rgba(246, 248, 240, .78); font-size: 9px; }
-.portrait-caption { position: absolute; z-index: 2; inset: auto 21px 21px; display: flex; align-items: center; gap: 12px; color: #f6f8f0; font-size: 10px; font-weight: 800; letter-spacing: .09em; line-height: 1.7; }
-.portrait-caption-mark { display: grid; place-items: center; flex: 0 0 auto; width: 37px; height: 37px; border: 1px solid var(--accent); color: var(--accent); font-family: var(--mono); }
+.hero-visual::before { position: absolute; z-index: -1; top: 15%; right: 10%; width: 78%; aspect-ratio: 1; border-radius: 50%; background: var(--accent); content: ''; opacity: .14; filter: blur(62px); }
+.portrait-frame { position: relative; z-index: 1; width: min(100%, 450px); height: 565px; overflow: hidden; border: 1px solid color-mix(in srgb, var(--accent) 36%, var(--line)); border-radius: 235px 235px 14px 14px; background: #080908; box-shadow: 0 30px 90px rgba(0, 0, 0, .3), 0 0 0 7px color-mix(in srgb, var(--accent) 5%, transparent); }
+.portrait-frame::after { position: absolute; content: ''; inset: 0; pointer-events: none; border-radius: inherit; background: linear-gradient(180deg, rgba(9, 12, 9, .02) 42%, rgba(9, 12, 9, .9) 100%); }
+.portrait-frame img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 20%; }
+.portrait-topline { position: absolute; z-index: 2; inset: 18px 20px auto; display: flex; justify-content: space-between; padding: 9px 11px; border: 1px solid rgba(246, 248, 240, .13); border-radius: 999px; background: rgba(9, 12, 9, .38); color: rgba(246, 248, 240, .82); font-size: 9px; backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); }
+.portrait-caption { position: absolute; z-index: 2; inset: auto 18px 18px; display: flex; align-items: center; gap: 12px; padding: 13px 14px; border: 1px solid rgba(246, 248, 240, .14); border-radius: 11px; background: rgba(9, 12, 9, .55); color: #f6f8f0; font-size: 10px; font-weight: 800; letter-spacing: .09em; line-height: 1.7; backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); }
+.portrait-caption-mark { display: grid; place-items: center; flex: 0 0 auto; width: 37px; height: 37px; border: 1px solid var(--accent); border-radius: 50%; background: rgba(201, 242, 124, .08); color: var(--accent); font-family: var(--mono); }
 .portrait-caption small { color: rgba(246, 248, 240, .65); font-family: var(--mono); font-size: 8px; font-weight: 400; }
 .portrait-arrow { margin-left: auto; color: var(--accent); font-size: 18px; }
 .hero-orbit { position: absolute; z-index: -1; display: block; border: 1px solid color-mix(in srgb, var(--accent) 24%, transparent); border-radius: 50%; transform: rotate(-25deg); }
@@ -281,6 +283,7 @@ h2 { margin: 0; font-size: clamp(38px, 5.4vw, 64px); line-height: 1.04; font-wei
   .site-header { padding-inline: 12px; }
   .site-header .brand { gap: 7px; }
   .site-header .brand-mark { width: 30px; height: 30px; }
+  .site-header .brand-avatar { width: 31px; height: 31px; }
   .site-header .brand-name { font-size: 11px; }
   .site-header .theme-toggle { gap: 6px; padding-inline: 8px; }
   .site-header .theme-label { font-size: 9px; }
