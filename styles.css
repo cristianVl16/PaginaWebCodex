@@ -32,8 +32,8 @@ a:focus-visible, button:focus-visible { outline: 3px solid var(--accent); outlin
 .brand-avatar { display: block; flex: 0 0 auto; width: 36px; height: 36px; border: 1px solid color-mix(in srgb, var(--accent) 75%, white); border-radius: 50%; object-fit: cover; object-position: center 15%; box-shadow: 0 0 0 3px var(--bg), 0 0 0 4px color-mix(in srgb, var(--accent) 40%, transparent); }
 .brand-name { font-size: 13px; font-weight: 800; letter-spacing: -.035em; }
 .brand-dot { color: var(--accent); }
-.main-nav { display: flex; align-items: center; gap: clamp(18px, 3vw, 42px); }
-.main-nav a { position: relative; padding-block: 8px; color: var(--muted); font-size: 12px; font-weight: 600; transition: color .2s ease; }
+.main-nav { display: flex; flex: 1 1 auto; min-width: 0; align-items: center; justify-content: center; gap: clamp(10px, 1.7vw, 24px); overflow-x: auto; scrollbar-color: var(--subtle) transparent; scrollbar-width: thin; }
+.main-nav a { position: relative; flex: 0 0 auto; padding-block: 8px; color: var(--muted); font-size: 12px; font-weight: 600; transition: color .2s ease; }
 .main-nav a::after { position: absolute; right: 0; bottom: 1px; left: 0; height: 1px; background: var(--accent); content: ''; transform: scaleX(0); transform-origin: left; transition: transform .2s ease; }
 .main-nav a:hover, .main-nav a:focus-visible { color: var(--accent); }
 .main-nav a[aria-current="location"] { color: var(--accent); }
@@ -236,7 +236,7 @@ h2 { margin: 0; font-size: clamp(38px, 5.4vw, 64px); line-height: 1.04; font-wei
   .section-wrap, .site-footer { width: min(calc(100% - 36px), var(--max)); }
   .site-header { position: fixed; top: 0; right: 0; left: 0; height: 112px; min-height: 112px; padding: 6px 18px 0; align-content: space-between; flex-wrap: wrap; gap: 0; }
   .brand-name { font-size: 12px; }
-  .main-nav { order: 3; width: 100%; justify-content: space-between; overflow-x: auto; gap: 20px; padding: 0 0 12px; }
+  .main-nav { order: 3; flex: 0 0 100%; width: 100%; justify-content: flex-start; overflow-x: auto; gap: 20px; padding: 0 0 12px; }
   .main-nav a { flex: 0 0 auto; font-size: 10px; }
   .theme-toggle { margin-left: auto; padding: 8px 10px; }
   .theme-label { font-size: 10px; }
@@ -285,6 +285,7 @@ h2 { margin: 0; font-size: clamp(38px, 5.4vw, 64px); line-height: 1.04; font-wei
   .site-header .brand-mark { width: 30px; height: 30px; }
   .site-header .brand-avatar { width: 31px; height: 31px; }
   .site-header .brand-name { font-size: 11px; }
+  .site-header .main-nav { gap: 14px; }
   .site-header .theme-toggle { gap: 6px; padding-inline: 8px; }
   .site-header .theme-label { font-size: 9px; }
   .hero h1 { font-size: 50px; }
